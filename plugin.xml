@@ -1,2 +1,51 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.plugin.aliPushPlugin.ios" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>AliPushPlugin</name><js-module name="AliPushPlugin" src="www/AliPushPlugin.js"><clobbers target="cordova.plugins.AliPushPlugin" /></js-module><platform name="ios"><config-file parent="/*" target="config.xml"><feature name="AliPushPlugin"><param name="ios-package" value="AliPushPlugin" /></feature></config-file><source-file src="src/ios/AliPushPlugin.m" /></platform></plugin>
+<plugin id="cordova-plugin-alipush-ios" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <name>AliPushPlugin</name>
+    <author>oceankai</author>
+    <keywords>alipush</keywords>
+    <js-module name="AliPushPlugin" src="www/AliPushPlugin.js">
+        <clobbers target="cordova.plugins.AliPushPlugin" />
+    </js-module>
+    
+    <preference name="APP_KEY" />
+    <preference name="App_Secret" />
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="AliPushPlugin">
+                <param name="ios-package" value="AliPushPlugin" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/AliPushPlugin.h" />
+        <source-file src="src/ios/AliPushPlugin.m" />
+        <source-file src="src/ios/AppDelegate+AliPush.h" />
+        <source-file src="src/ios/AppDelegate+AliPush.m" />
+        <source-file src="src/ios/notificationService/NotificationService.h" />
+        <source-file src="src/ios/notificationService/NotificationService.m" />
+        
+        <!-- 引入alipush需要的官方依赖库 -->
+        <framework src="src/ios/OneSDK/AlicloudUtils.framework" custom="true" />
+        <framework src="src/ios/OneSDK/CloudPushSDK.framework" custom="true" />
+        <framework src="src/ios/OneSDK/UTDID.framework" custom="true" />
+        <framework src="src/ios/OneSDK/UTMini.framework" custom="true" />
+
+        <!-- 引入ios依赖库 -->
+        <framework src="libz.tbd" weak="true" />
+        <framework src="libresolv.tbd" weak="true" />
+        <framework src="CoreTelephony.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+        <framework src="libsqlite3.tbd" weak="true" />
+        
+        <resource-file src="src/ios/AliPushConfig.plist" />
+
+        <config-file target="*AliPushConfig.plist" parent="Appkey">
+            <string>$APP_KEY</string>
+        </config-file>
+        <config-file target="*AliPushConfig.plist" parent="Appsecret">
+            <string>$App_Secret</string>
+        </config-file>
+    
+    </platform>
+</plugin>
