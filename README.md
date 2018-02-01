@@ -7,7 +7,7 @@
 
 1.安装
 
-cordova plugin add https://...git --variable APP_KEY=key --variable APP_SECRET=secret
+ionic cordova plugin add https://...git --variable APP_KEY=key --variable APP_SECRET=secret
 
 
 2.使用 
