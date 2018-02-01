@@ -9,7 +9,7 @@
     </js-module>
     
     <preference name="APP_KEY" />
-    <preference name="App_Secret" />
+    <preference name="APP_SECRET" />
 
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
@@ -44,7 +44,7 @@
             <string>$APP_KEY</string>
         </config-file>
         <config-file target="*AliPushConfig.plist" parent="Appsecret">
-            <string>$App_Secret</string>
+            <string>$APP_SECRET</string>
         </config-file>
     
     </platform>

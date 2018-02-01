@@ -7,15 +7,13 @@
 
 #import "AppDelegate.h"
 #import "CloudPushSDK/CloudPushSDK.h"
+#import "AliPushPlugin.h"
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate (AliPush)
+@interface AppDelegate (AliPush) <UNUserNotificationCenterDelegate>
 
-// SDK初始化
-- (void)initCloudPush;
-// 注册苹果推送，获取deviceToken用于推送
-- (void)registerAPNS:(UIApplication *)application;
-// 注册推送消息到来监听
-- (void)registerMessageReceive;
+@property (nonatomic, strong) UNUserNotificationCenter *notificationCenter;
+
 // 处理到来推送消息
 - (void)onMessageReceived:(NSNotification *)notification;
 

@@ -21,22 +21,14 @@
 // };
 
 
-var JPushPlugin = function () {}
+var AliPushPlugin = function () {}
 
-JPushPlugin.prototype.init = function () {
-  if (this.isPlatformIOS()) {
-    this.callNative('initial', [], null)
-  } else {
-    this.callNative('init', [], null)
-  }
+AliPushPlugin.prototype.coolMethod = function (arg0, success, error) {
+    cordova.exec(success, error, 'AliPushPlugin', 'coolMethod', [arg0]);
+};
+
+AliPushPlugin.prototype.onMessageReceived = function (arg0, success, error) {
+    cordova.exec(success, error, 'AliPushPlugin', 'onMessageReceived', [arg0]);
 }
 
-JPushPlugin.prototype.callNative = function (name, args, successCallback, errorCallback) {
-  if (errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'JPushPlugin', name, args)
-  } else {
-    cordova.exec(successCallback, this.errorCallback, 'JPushPlugin', name, args)
-  }
-}
-
-module.exports = new JPushPlugin()
+module.exports = new AliPushPlugin()

@@ -3,14 +3,10 @@
 <plist version="1.0">
 <dict>
     <key>Appkey</key>
-    <string>$APP_KEY</string>
+    <string></string>
     <key>Appsecret</key>
-    <string>$App_Secret</string>
+    <string></string>
     <key>Channel</key>
     <string>iOS</string>
-    <key>IsProduction</key>
-    <false/>
-    <key>Delay</key>
-    <false/>
 </dict>
 </plist>
