@@ -23,9 +23,9 @@
 
 var AliPushPlugin = function () {}
 
-AliPushPlugin.prototype.coolMethod = function (arg0, success, error) {
-    cordova.exec(success, error, 'AliPushPlugin', 'coolMethod', [arg0]);
-};
+// AliPushPlugin.prototype.coolMethod = function (arg0, success, error) {
+//     cordova.exec(success, error, 'AliPushPlugin', 'coolMethod', [arg0]);
+// };
 
 AliPushPlugin.prototype.onMessageReceived = function (arg0, success, error) {
     cordova.exec(success, error, 'AliPushPlugin', 'onMessageReceived', [arg0]);
